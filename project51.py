@@ -10,6 +10,8 @@ import time, os
 
 toDo = []
 
+
+#you will need to comment this section out as no file will exist
 f = open("toDo.txt", "r")
 toDo = eval(f.read())
 f.close()
