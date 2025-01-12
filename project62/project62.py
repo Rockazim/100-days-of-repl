@@ -14,15 +14,50 @@ They can then choose to see the next previous entry working backwards until they
 from replit import db
 import datetime
 
+
 def add():
-    timestamp = datetime.datetime.now()
-    diary = input(f"Diary entry for {timestamp}")
-    db[timestamp] = 
+    timestamp = str(datetime.datetime.now())
+    diary = input(f"Diary entry for {timestamp}\n")
+    timestamp = f" {timestamp}"
+    db[timestamp] = diary
+
+
+def view():
+    entries = db.prefix(" ")
+    entries = entries[::-1]
+    try:
+        selection = int(input("1: Most recent?\n2: View exact diary?\n>"))
+    except:
+        print("Please use a valid response!")
+        view()
+
+    if selection == 1:
+        for i in entries:
+            print(f"{i}\n {db[i]}\n", sep="")
+            if input("Next or exit? > ").lower() == "next":
+                continue
+            else:
+                break
+    elif selection == 2:
+        year = int(input("Input the year> "))
+        month = int(input("Input the month> "))
+        day = int(input("Input the day> "))
+
+        user_date = str(datetime.date(year, month, day))
+        for i in entries:
+            if i[1:11] == user_date:
+                print(f"{i}\n {db[i]}\n", sep="")
+            else:
+                continue
+
+    else:
+        view()
+
 
 def main():
     while True:
         try:
-            choice = int(input("1: Add\n2:View\n> "))
+            choice = int(input("1: Add\n2: View\n> "))
         except:
             print("Please enter a valid choice!")
 
