@@ -1,1 +1,20 @@
-hey
+html, body{
+    height: 100%;
+    width: 100%;
+    background-color: #2E3B4E;
+  }
+
+
+h1{
+    font-size: 60px;
+    font-family: "Bradley Hand"
+
+}
+h2{
+    font-size: 40px;
+    font-family: "Bradley Hand"
+}
+p{
+    font-size: 20px;
+    font-family: "Bradley Hand"
+}
