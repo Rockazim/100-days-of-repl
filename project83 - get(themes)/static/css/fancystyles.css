@@ -1,0 +1,18 @@
+html, body{
+    height: 100%;
+    width: 100%;
+    background-color: #F4E1A6;
+  }
+
+
+h1{
+    font-size: 60px;
+    font-family: "Brush Script MT", "Lucida Handwriting", "Palatino Linotype", "Book Antiqua", cursive;
+
+}
+h2{
+    font-size: 40px;
+}
+p{
+    font-size: 20px;
+}
